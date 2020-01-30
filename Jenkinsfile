@@ -17,8 +17,15 @@ pipeline {
         stage('Deploy to k8s'){
             steps{
                 sh "sudo /usr/local/bin/kubectl run hello-world --image=iad.ocir.io/idreywyoj0pu/fsaito/hello-world:latest --port 8000 --expose"
-                       
+
+                        
             }
         }  
     }
+}
+
+
+def getDockerTag(){
+    def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
+    return tag
 }
