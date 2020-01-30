@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy to k8s'){
             steps{
-                sh "sudo /usr/local/bin/kubectl run hello-world --image=iad.ocir.io/idreywyoj0pu/fsaito/hello-world:latest --port 8000 --expose"
+                sh "sudo /usr/local/bin/kubectl run hello-world-jenkins --image=iad.ocir.io/idreywyoj0pu/fsaito/hello-world:latest --port 8000 --expose"
 
                         
             }
