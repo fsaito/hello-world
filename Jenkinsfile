@@ -11,6 +11,7 @@ pipeline {
         }
         stage('DockerHub Push'){
             steps{
+                    sh "sudo docker tag fsaito/hello-world iad.ocir.io/idreywyoj0pu/fsaito/hello-world:latest"
                     sh "sudo docker push iad.ocir.io/idreywyoj0pu/fsaito/hello-world:latest"
             }
         }
